@@ -1,0 +1,22 @@
+# El Corpus: 92 MB de PDFs con derechos de autor. No se versiona.
+# Las Obras se referencian por manifiesto, no por contenido.
+books/
+
+# Artefactos del pipeline (regenerables por etapa)
+.cache/
+artifacts/
+*.db
+*.gguf
+*.safetensors
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Entorno
+.env
+.DS_Store
