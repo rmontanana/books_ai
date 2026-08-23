@@ -1,0 +1,548 @@
+# Conjunto de Evaluación — books_ai
+#
+# Cada respuesta se ha VERIFICADO contra el texto extraído del Corpus. La página
+# es la del PDF (pdftotext), no la de la edición impresa. El pasaje es literal.
+# Ninguna entrada procede de memoria sobre los libros: la que no se pudo
+# localizar en el texto se descartó.
+#
+# ESTADO: validado por Ricardo Montañana el 2026-08-23.
+
+meta:
+  version: 1
+  total: 58
+  reparto_familias:   { directa: 29, multisalto: 12, negativa: 9, cruzada: 8 }
+  reparto_universos:  { tolkien: 29, martin: 29 }
+
+preguntas:
+
+# ─────────────────────────── DIRECTAS · TOLKIEN ───────────────────────────
+- id: T01
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Cómo se llama la espada corta que lleva Frodo?
+  respuesta: Dardo.
+  cita: { obra: "El Señor de los Anillos I: La comunidad del anillo", pagina: 263 }
+  pasaje: "Detrás del enano caminaba Frodo, que había desenvainado la espada corta, Dardo."
+  validado: si
+
+- id: T02
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Cómo se llamaba el padre de Frodo?
+  respuesta: Drogo Bolsón.
+  cita: { obra: "El Señor de los Anillos II: Las dos torres", pagina: 250 }
+  pasaje: "Frodo hijo de Drogo es mi nombre, y el que está conmigo es Samsagaz hijo de Hamfast."
+  validado: si
+
+- id: T03
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Cuántos enanos acompañan a Bilbo en su viaje?
+  respuesta: Trece.
+  cita: { obra: "El Hobbit", pagina: 8 }
+  pasaje: "Gandalf se puso a la cabecera, con los trece enanos alrededor."
+  validado: si
+
+- id: T04
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Cómo se llama el dragón que ocupa la Montaña Solitaria?
+  respuesta: Smaug.
+  cita: { obra: "El Hobbit", pagina: 15 }
+  pasaje: "Smaug no podría arrastrarse por un agujero de ese tamaño, ni siquiera cuando era un dragón joven."
+  validado: si
+
+- id: T05
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Quién era el más hábil de los orfebres de Eregion?
+  respuesta: Celebrimbor, hijo de Curufin.
+  cita: { obra: "El Silmarillion", pagina: 177 }
+  pasaje: "el más hábil era Celebrimbor hijo de Curufin, que se separó de su padre y se quedó en Nargothrond."
+  validado: si
+
+- id: T06
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Cómo se llama el caballo de Gandalf?
+  respuesta: Sombragrís.
+  cita: { obra: "El Señor de los Anillos I: La comunidad del anillo", pagina: 222 }
+  pasaje: "incansable, rápido como el soplo del viento. Sombragrís lo llaman."
+  validado: si
+
+- id: T07
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Cuántos Silmarils hay y quién los hizo?
+  respuesta: Tres, hechos por Fëanor.
+  cita: { obra: "El Silmarillion", pagina: 207 }
+  pasaje: "Silmarils. Las tres joyas hechas por Fëanor antes de la destrucción de los Dos Árboles de Valinor, portadoras de su luz."
+  validado: si
+
+- id: T08
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Qué criatura habita el paso de Cirith Ungol?
+  respuesta: Ella-Laraña.
+  cita: { obra: "El Señor de los Anillos II: Las dos torres", pagina: 309 }
+  pasaje: "9 El Antro de Ella-Laraña"
+  validado: si
+
+- id: T09
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Quién se enfrenta al Señor de los Nazgûl en los campos del Pelennor?
+  respuesta: Éowyn, que había cabalgado disfrazada bajo el nombre de Dernhelm.
+  cita: { obra: "El Señor de los Anillos III: El retorno del rey", pagina: 99 }
+  pasaje: "el yelmo que ocultaba el secreto de Eowyn había caído, y los cabellos sueltos de oro pálido le resplandecían sobre los hombros."
+  validado: si
+
+- id: T10
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Qué profecía se cumplió con la muerte del Rey Brujo?
+  respuesta: La de Glorfindel al Rey Eärnur, según la cual el Rey Brujo no caería por mano de hombre.
+  cita: { obra: "El Señor de los Anillos III: El retorno del rey", pagina: 406 }
+  pasaje: "se cumplieron las palabras que mucho antes le dijo Glorfindel al Rey Eärnur: que el Rey Brujo no caería por mano de hombre."
+  validado: si
+
+- id: T11
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Qué hace Frodo al llegar al corazón del Monte del Destino?
+  respuesta: Se pone el Anillo y lo reclama para sí, en lugar de destruirlo.
+  cita: { obra: "El Señor de los Anillos III: El retorno del rey", pagina: 199 }
+  pasaje: "mientras Frodo se ponía el Anillo y lo reclamaba para él, hasta en los Sammath Naur, el corazón mismo del reino de Sauron, el Poder de Barad-dûr se estremecía."
+  validado: si
+
+- id: T12
+  familia: directa
+  universo: tolkien
+  pregunta: ¿En qué bosque encuentran Merry y Pippin a Bárbol?
+  respuesta: En Fangorn.
+  cita: { obra: "El Señor de los Anillos II: Las dos torres", pagina: 55 }
+  pasaje: "los hobbits corrían tan rápidamente como era posible [...] internándose más y más en Fangorn."
+  validado: si
+
+- id: T13
+  familia: directa
+  universo: tolkien
+  pregunta: ¿Cuál es el verdadero nombre de Trancos?
+  respuesta: Aragorn, hijo de Arathorn.
+  cita: { obra: "El Señor de los Anillos I: La comunidad del anillo", pagina: 186 }
+  pasaje: "Por el momento, Aragorn nos ha salvado del desastre. —Sí —dijo Frodo—, fue Trancos quien nos salvó."
+  validado: si
+
+- id: T14
+  familia: directa
+  universo: tolkien
+  pregunta: ¿De qué está hecha la cota de malla que Frodo lleva bajo la ropa?
+  respuesta: De mithril.
+  cita: { obra: "El Señor de los Anillos III: El retorno del rey", pagina: 144 }
+  pasaje: "por último la cota de malla de mithril que Frodo vestía bajo las ropas andrajosas."
+  validado: si
+
+# ─────────────────────────── DIRECTAS · MARTIN ────────────────────────────
+- id: M01
+  familia: directa
+  universo: martin
+  pregunta: ¿Cómo se llama el mandoble de Eddard Stark y de qué está hecho?
+  respuesta: Hielo, de acero valyrio.
+  cita: { obra: "Juego de tronos", pagina: 21 }
+  pasaje: "se llamaba Hielo. [...] La hoja era de acero valyrio, forjada con encantamientos y negra como el humo."
+  validado: si
+
+- id: M02
+  familia: directa
+  universo: martin
+  pregunta: ¿Cuál es el lema de la casa Stark?
+  respuesta: "Se acerca el invierno."
+  cita: { obra: "Juego de tronos", pagina: 29 }
+  pasaje: "Y se acerca el invierno. [...] Eran el lema de los Stark."
+  validado: si
+
+- id: M03
+  familia: directa
+  universo: martin
+  pregunta: ¿Cómo se llama la espada de Arya Stark?
+  respuesta: Aguja.
+  cita: { obra: "Juego de tronos", pagina: 198 }
+  pasaje: "Casi se había olvidado de que tenía a Aguja en la mano."
+  validado: si
+
+- id: M04
+  familia: directa
+  universo: martin
+  pregunta: ¿Cómo se llama el lobo huargo de Jon Nieve?
+  respuesta: Fantasma.
+  cita: { obra: "Juego de tronos", pagina: 54 }
+  pasaje: "Fantasma lo devoró en un silencio salvaje."
+  validado: si
+
+- id: M05
+  familia: directa
+  universo: martin
+  pregunta: ¿Qué rasgo físico distingue a Sandor Clegane?
+  respuesta: El rostro quemado.
+  cita: { obra: "Juego de tronos", pagina: 43 }
+  pasaje: "y Sandor Clegane, con el espantoso rostro quemado."
+  validado: si
+
+- id: M06
+  familia: directa
+  universo: martin
+  pregunta: ¿Qué dice Tyrion tras pagar al carcelero del Nido de Águilas?
+  respuesta: "Un Lannister siempre paga sus deudas."
+  cita: { obra: "Juego de tronos", pagina: 399 }
+  pasaje: "—Un Lannister siempre paga sus deudas."
+  validado: si
+
+- id: M07
+  familia: directa
+  universo: martin
+  pregunta: ¿A quién apodan el Gnomo?
+  respuesta: A Tyrion Lannister.
+  cita: { obra: "Juego de tronos", pagina: 53 }
+  pasaje: "los hermanos de la reina, los Lannister de Roca Casterly. El León y el Gnomo."
+  validado: si
+
+- id: M08
+  familia: directa
+  universo: martin
+  pregunta: ¿Dónde se casan Daenerys Targaryen y Khal Drogo?
+  respuesta: En un prado fuera de las murallas de Pentos, a cielo abierto.
+  cita: { obra: "Juego de tronos", pagina: 96 }
+  pasaje: "Daenerys Targaryen se casó con Khal Drogo [...] en un prado fuera de las murallas de Pentos, porque los dothrakis creían que todo acontecimiento importante en la vida de un hombre debía celebrarse a cielo abierto."
+  validado: si
+
+- id: M09
+  familia: directa
+  universo: martin
+  pregunta: ¿Cuál de los dragones de Daenerys es el blanco?
+  respuesta: Viserion.
+  cita: { obra: "Danza de dragones", pagina: 47 }
+  pasaje: "Viserion percibió su desasosiego. El dragón blanco estaba enroscado en un peral, con la cabeza apoyada en la cola."
+  validado: si
+
+- id: M10
+  familia: directa
+  universo: martin
+  pregunta: ¿Cuál es el lema de la casa Targaryen?
+  respuesta: "Fuego y Sangre."
+  cita: { obra: "Fuego y Sangre", pagina: 29 }
+  pasaje: "la próxima vez traeremos fuego y sangre. —Ese es vuestro lema —dijo la princesa Meria."
+  validado: si
+
+- id: M11
+  familia: directa
+  universo: martin
+  pregunta: ¿Cuál es el nombre verdadero de Meñique?
+  respuesta: Petyr Baelish.
+  cita: { obra: "Juego de tronos", pagina: 178 }
+  pasaje: "—¿A qué jugáis, Meñique? Catelyn está en Invernalia, a cientos de leguas de aquí."
+  validado: si
+  nota: "El pasaje establece el apodo en uso; conviene añadir una segunda cita que ligue explícitamente Meñique a Petyr Baelish."
+
+- id: M12
+  familia: directa
+  universo: martin
+  pregunta: ¿Qué es el Titán de Braavos?
+  respuesta: Un gigante alto como una montaña que guarda la entrada de Braavos.
+  cita: { obra: "Festín de cuervos", pagina: 101 }
+  pasaje: "«El Titán de Braavos.» [...] Era un gigante alto como una montaña y, cuando un peligro se cernía sobre Braavos, se despertaba."
+  validado: si
+
+- id: M13
+  familia: directa
+  universo: martin
+  pregunta: ¿Qué le pide Robert a Ned nada más llegar a Invernalia?
+  respuesta: Que lo lleve a las criptas para presentar sus respetos a Lyanna.
+  cita: { obra: "Juego de tronos", pagina: 44 }
+  pasaje: "—Llévame a tu cripta, Eddard —dijo el rey a su anfitrión en cuanto terminaron las formalidades del recibimiento—. Quiero presentar mis respetos."
+  validado: si
+
+- id: M14
+  familia: directa
+  universo: martin
+  pregunta: Según Edric Dayne, ¿quién amamantó a Jon Nieve?
+  respuesta: Wylla.
+  cita: { obra: "Tormenta de espadas", pagina: 539 }
+  pasaje: "Cuando era pequeño mi señora madre no tenía leche, así que Wylla tuvo que amamantarme. —¿Quién es Wylla? [...] —La madre de Jon"
+  validado: si
+  nota: "TRAMPA DELIBERADA. Es una afirmación de un personaje, no del narrador. La respuesta correcta debe atribuirla a Edric Dayne, no presentarla como hecho establecido. Prueba si el sistema distingue lo dicho de lo cierto."
+
+- id: M15
+  familia: directa
+  universo: martin
+  pregunta: ¿Dónde caza Drogon mientras Daenerys navega?
+  respuesta: Por delante o por detrás del barco, a varios kilómetros, fuera de la vista.
+  cita: { obra: "Tormenta de espadas", pagina: 107 }
+  pasaje: "Drogon también se mantenía en lo alto, aunque no a la vista; estaría a varios kilómetros por delante o por detrás, cazando."
+  validado: si
+
+# ─────────────────────────── MULTI-SALTO ──────────────────────────────────
+- id: X01
+  familia: multisalto
+  universo: tolkien
+  pregunta: ¿Qué parentesco une a Éowyn con el rey Théoden?
+  respuesta: Es su sobrina; Éowyn es hermana de Éomer, y Éomer es hijo de la hermana de Théoden.
+  cita: { obra: "El Señor de los Anillos II: Las dos torres", pagina: 118 }
+  cita_2: { obra: "El Señor de los Anillos III: El retorno del rey", pagina: 124 }
+  pasaje: "A ti Eomer, hijo de mi hermana, te nombro mi heredero."
+  pasaje_2: "nunca supe que frío alguno haya herido a Eowyn, mi hermana"
+  validado: si
+
+- id: X02
+  familia: multisalto
+  universo: tolkien
+  pregunta: ¿Qué relación hay entre un miembro de la Compañía del Anillo y la compañía de Thorin Escudo de Roble?
+  respuesta: Gimli es hijo de Glóin, que fue uno de los trece enanos que acompañaron a Thorin y a Bilbo.
+  cita: { obra: "El Señor de los Anillos: Apéndices", pagina: 61 }
+  cita_2: { obra: "El Hobbit", pagina: 7 }
+  pasaje: "Fue llamado Amigo de los Elfos por la gran amistad que lo unió a Legolas, hijo del Rey Thranduil"
+  pasaje_2: "Dori, Nori, Ori, Óin, y Glóin eran sus nombres"
+  validado: si
+  nota: "Salto entre dos Obras distintas. Verifica que la recuperación cruza libros dentro del mismo Universo."
+
+- id: X03
+  familia: multisalto
+  universo: tolkien
+  pregunta: ¿De qué reino procede Legolas y quién lo gobierna?
+  respuesta: Del Bosque Negro del Norte, gobernado por su padre Thranduil.
+  cita: { obra: "El Señor de los Anillos I: La comunidad del anillo", pagina: 202 }
+  pasaje: "Legolas, que traía un mensaje de su padre, Thranduil, el Rey de los Elfos del Bosque Negro del Norte."
+  validado: si
+
+- id: X04
+  familia: multisalto
+  universo: tolkien
+  pregunta: ¿Por qué perdonó Bilbo la vida a Gollum?
+  respuesta: Porque le dio lástima, y no quiso usar el Anillo para matarlo a traición pese a ser su única esperanza.
+  cita: { obra: "El Señor de los Anillos I: La comunidad del anillo", pagina: 11 }
+  pasaje: "le dio lástima, pues aunque tenía el Anillo, que era su única esperanza, no lo utilizaría como ayuda para matar a la miserable criatura a traición."
+  validado: si
+
+- id: X05
+  familia: multisalto
+  universo: tolkien
+  pregunta: ¿Quién ordenó que Frodo guardara reposo en Rivendel y quién había enviado exploradores contra los Nueve?
+  respuesta: Elrond, en ambos casos.
+  cita: { obra: "El Señor de los Anillos I: La comunidad del anillo", pagina: 179 }
+  cita_2: { obra: "El Señor de los Anillos I: La comunidad del anillo", pagina: 186 }
+  pasaje: "a esos pocos Elrond los envió al norte, al oeste y al sur."
+  pasaje_2: "Hoy no tienes que hablar ni preocuparte por nada; son órdenes de Elrond."
+  validado: si
+
+- id: X06
+  familia: multisalto
+  universo: tolkien
+  pregunta: ¿Con qué nombre viajó Éowyn hasta Minas Tirith y quién la acompañaba?
+  respuesta: Con el nombre de Dernhelm, llevando a Merry consigo sobre su montura.
+  cita: { obra: "El Señor de los Anillos III: El retorno del rey", pagina: 65 }
+  cita_2: { obra: "El Señor de los Anillos III: El retorno del rey", pagina: 99 }
+  pasaje: "—Entonces llámame Dernhelm. Así pues, cuando el rey partió, Meriadoc el hobbit iba sentado delante de Dernhelm."
+  pasaje_2: "estaba ella, la mujer que hasta ese momento Merry llamara Dernhelm."
+  validado: si
+
+- id: X07
+  familia: multisalto
+  universo: martin
+  pregunta: ¿Qué relación hay entre Jaime Lannister y la reina Cersei?
+  respuesta: Son hermanos gemelos.
+  cita: { obra: "Juego de tronos", pagina: 53 }
+  pasaje: "Ser Jaime Lannister era hermano gemelo de la reina Cersei: alto, rubio, con ojos verdes deslumbrantes."
+  validado: si
+
+- id: X08
+  familia: multisalto
+  universo: martin
+  pregunta: ¿Por qué juró Robert matar a Rhaegar Targaryen?
+  respuesta: Por Lyanna Stark, ante cuya estatua en las criptas de Invernalia lo recuerda.
+  cita: { obra: "Juego de tronos", pagina: 47 }
+  pasaje: "—A Lyanna... le gustaban las flores. —Juré matar a Rhaegar por esto —dijo el Rey."
+  validado: si
+
+- id: X09
+  familia: multisalto
+  universo: martin
+  pregunta: ¿Quién mató al rey Aerys y qué opinaba Robert de ese acto?
+  respuesta: Jaime Lannister; Robert sostenía que alguien tenía que hacerlo.
+  cita: { obra: "Juego de tronos", pagina: 110 }
+  pasaje: "—¡Por los siete infiernos, alguien tenía que matar a Aerys! [...] Si no lo hubiera hecho Jaime nos habría tocado a ti o a mí."
+  validado: si
+
+- id: X10
+  familia: multisalto
+  universo: martin
+  pregunta: ¿Cómo se conoce en el consejo el crimen de Lord Walder Frey?
+  respuesta: Como la Boda Roja.
+  cita: { obra: "Festín de cuervos", pagina: 264 }
+  pasaje: "del crimen de Lord Walder. [...] —¿Os referís a la Boda Roja?"
+  validado: si
+
+- id: X11
+  familia: multisalto
+  universo: martin
+  pregunta: ¿Dónde había oído Arya hablar del Titán de Braavos antes de verlo?
+  respuesta: En Invernalia, en los cuentos de la Vieja Tata.
+  cita: { obra: "Festín de cuervos", pagina: 101 }
+  pasaje: "La Vieja Tata les contaba cuentos sobre el Titán cuando vivían en Invernalia."
+  validado: si
+
+- id: X12
+  familia: multisalto
+  universo: martin
+  pregunta: ¿Dónde quería Robert que se criara el hijo de Jon Arryn, y dónde acabó?
+  respuesta: Robert quería que fuese pupilo de Tywin Lannister en Roca Casterly; Lysa se lo llevó al Nido de Águilas.
+  cita: { obra: "Juego de tronos", pagina: 48 }
+  pasaje: "Se ha llevado al chico de vuelta al Nido de Águilas. Es lo contrario de lo que le dije. Yo quería que se criara como pupilo de Tywin Lannister en Roca Casterly."
+  validado: si
+
+# ─────────────────────────── NEGATIVAS ────────────────────────────────────
+# La respuesta correcta es declarar que el Corpus no lo cubre.
+- id: N01
+  familia: negativa
+  universo: tolkien
+  pregunta: ¿Cuántos años tiene Legolas?
+  respuesta_esperada: El Corpus no lo dice.
+  verificacion: "Sin coincidencias para «Legolas» junto a una edad en años."
+  validado: si
+
+- id: N02
+  familia: negativa
+  universo: tolkien
+  pregunta: ¿Cómo se llaman los dos Magos Azules?
+  respuesta_esperada: El Corpus no los nombra.
+  verificacion: "Sin coincidencias para «Magos Azules» ni «Ithryn Luin»."
+  validado: si
+
+- id: N03
+  familia: negativa
+  universo: tolkien
+  pregunta: ¿Quién era el padre de Gandalf?
+  respuesta_esperada: El Corpus no lo dice.
+  verificacion: "Sin coincidencias para «padre de Gandalf»."
+  validado: si
+
+- id: N04
+  familia: negativa
+  universo: tolkien
+  pregunta: ¿Qué altura tiene la torre de Barad-dûr?
+  respuesta_esperada: El Corpus no da ninguna medida.
+  verificacion: "Sin coincidencias para «Barad-dûr» junto a una altura."
+  validado: si
+
+- id: N05
+  familia: negativa
+  universo: tolkien
+  pregunta: ¿Qué fue finalmente de las Ent-mujeres?
+  respuesta_esperada: El Corpus no lo resuelve; nunca fueron encontradas.
+  verificacion: "Sin coincidencias para «Ent-mujeres» junto a «encontraron»."
+  validado: si
+
+- id: N06
+  familia: negativa
+  universo: martin
+  pregunta: ¿Quién es Azor Ahai renacido?
+  respuesta_esperada: El Corpus no lo identifica.
+  verificacion: "Sin coincidencias para una identificación de Azor Ahai renacido."
+  validado: si
+
+- id: N07
+  familia: negativa
+  universo: martin
+  pregunta: ¿Sobrevive Jon Nieve a las puñaladas del Muro?
+  respuesta_esperada: El Corpus no lo resuelve; Danza de dragones termina sin aclararlo.
+  verificacion: "Sin coincidencias para «Jon Nieve sobrevivió»."
+  validado: si
+
+- id: N08
+  familia: negativa
+  universo: martin
+  pregunta: ¿Quién es el Príncipe que fue Prometido?
+  respuesta_esperada: El Corpus no lo identifica.
+  verificacion: "Sin coincidencias para una identificación del Príncipe que fue Prometido."
+  validado: si
+
+- id: N09
+  familia: negativa
+  universo: martin
+  pregunta: ¿Quién gana finalmente la guerra y se sienta en el Trono de Hierro?
+  respuesta_esperada: El Corpus no lo dice; la saga está inacabada.
+  verificacion: "Sin coincidencias para un desenlace de la guerra."
+  validado: si
+
+# ─────────────────────────── CRUZADAS ─────────────────────────────────────
+# Pregunta sobre un Universo con el filtro puesto en el otro.
+# La respuesta correcta es no contestar.
+- id: C01
+  familia: cruzada
+  universo_sujeto: tolkien
+  universo_filtro: martin
+  pregunta: ¿Quién forjó el Anillo Único?
+  respuesta_esperada: Sin respuesta; el término no existe en el Universo consultado.
+  verificacion: "«Anillo Único» ausente del corpus de Martin."
+  validado: si
+
+- id: C02
+  familia: cruzada
+  universo_sujeto: tolkien
+  universo_filtro: martin
+  pregunta: ¿Quién es Frodo Bolsón?
+  respuesta_esperada: Sin respuesta.
+  verificacion: "«Frodo» ausente del corpus de Martin."
+  validado: si
+
+- id: C03
+  familia: cruzada
+  universo_sujeto: tolkien
+  universo_filtro: martin
+  pregunta: ¿Quién es Gandalf?
+  respuesta_esperada: Sin respuesta.
+  verificacion: "«Gandalf» ausente del corpus de Martin."
+  validado: si
+
+- id: C04
+  familia: cruzada
+  universo_sujeto: tolkien
+  universo_filtro: martin
+  pregunta: ¿Qué es un hobbit?
+  respuesta_esperada: Sin respuesta.
+  verificacion: "«hobbit» ausente del corpus de Martin."
+  validado: si
+
+- id: C05
+  familia: cruzada
+  universo_sujeto: martin
+  universo_filtro: tolkien
+  pregunta: ¿Qué es Invernalia?
+  respuesta_esperada: Sin respuesta.
+  verificacion: "«Invernalia» ausente del corpus de Tolkien."
+  validado: si
+
+- id: C06
+  familia: cruzada
+  universo_sujeto: martin
+  universo_filtro: tolkien
+  pregunta: ¿Quién es Daenerys Targaryen?
+  respuesta_esperada: Sin respuesta.
+  verificacion: "«Daenerys» ausente del corpus de Tolkien."
+  validado: si
+
+- id: C07
+  familia: cruzada
+  universo_sujeto: martin
+  universo_filtro: tolkien
+  pregunta: ¿A quién llaman el Matarreyes?
+  respuesta_esperada: Sin respuesta.
+  verificacion: "«Matarreyes» ausente del corpus de Tolkien."
+  validado: si
+
+- id: C08
+  familia: cruzada
+  universo_sujeto: martin
+  universo_filtro: tolkien
+  pregunta: ¿Quién es Tyrion Lannister?
+  respuesta_esperada: Sin respuesta.
+  verificacion: "«Tyrion» ausente del corpus de Tolkien."
+  validado: si

@@ -103,8 +103,17 @@ así que se relanzan por separado y cambiar de Modelo Base no obliga a rehacerlo
 La limpieza (etapa 2) tiene una restricción fácil de romper sin notarlo: **no puede
 alterar el mapa de páginas**. Como la Cita es Obra + página, si los saltos se recolocan
 todas las citas apuntarán ligeramente mal y no se detectará hasta verificar una a mano.
-Se limpia dentro de cada página, nunca entre páginas. Hay 5.153 líneas de pie editorial
-(`www.lectulandia.com - Página N`) en los libros de Martin; los de Tolkien están limpios.
+Se limpia dentro de cada página, nunca entre páginas.
+
+El pie editorial afecta a **los dos Universos**, no sólo a Martin: `www.lectulandia.com`
+en los cinco tomos de Canción de hielo y fuego y en *El Mundo de Hielo y Fuego*, y
+`www.ArchivoTolkien.org` en *Las dos torres* (337 líneas), *El retorno del rey* (411) y
+los *Apéndices* (188). *El Hobbit*, *El Silmarillion*, *Beren y Lúthien*, *La comunidad
+del anillo* y *Fuego y Sangre* están limpios.
+
+Hay además **paratexto que no debe citarse nunca**: la presentación del editor al frente
+de *Juego de tronos* y el epílogo del autor al final de *Danza de dragones* hablan de los
+libros desde fuera de la ficción, y una Cita que apunte ahí es una Cita falsa.
 
 ## Infraestructura
 
@@ -168,6 +177,9 @@ Los tres son baratos de cambiar y se deciden mejor con el pipeline delante:
 - El Modelo Base concreto — está elegida la clase (8B), no el nombre
 - El modelo grande que generará los pares sintéticos
 - El número exacto de preguntas del Conjunto de Evaluación, dentro del rango 50–100
+- **Si los *Apéndices* siguen en el Corpus**: el 81% de sus páginas muestreadas tienen su
+  texto literal dentro de *El retorno del rey*, que ya los incluye. Es el mismo caso que
+  *Dominio de dragones* y está sin resolver.
 
 El planteamiento original del proyecto, previo a este diseño, se conserva en
 [`docs/app-planteamiento-inicial.md`](./docs/app-planteamiento-inicial.md).
