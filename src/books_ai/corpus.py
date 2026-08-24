@@ -2,8 +2,8 @@
 
 Son deliberadamente pequenas. Su trabajo aqui es dar al esqueleto de etapas algo
 real que masticar -los PDF del Corpus- sin adelantar decisiones que pertenecen a
-tickets posteriores: no hay Obras, ni Universos, ni Tipos de Obra todavia, solo
-ficheros y paginas.
+tickets posteriores: no hay Obras, ni Volumenes, ni Universos, ni Tipos de Texto
+todavia, solo ficheros y paginas.
 """
 
 from __future__ import annotations

@@ -25,10 +25,10 @@ Se separan los dos trabajos en dos términos:
 - El **Volumen** es lo que la Cita nombra y lo que posee el mapa de páginas. Son 15, uno por
   fichero. Para 11 de las 12 Obras la correspondencia es 1:1 y no cambia nada.
 
-El **Tipo de Obra** pasa a colgar del Volumen. Eso cierra de paso una contradicción que
+El **Tipo de Texto** pasa a colgar del Volumen. Eso cierra de paso una contradicción que
 estaba escrita en el diseño: los *Apéndices* eran a la vez «material de referencia» —un Tipo
 propio— y el cuarto fichero de una Obra cuyos otros tres son narrativa canónica. Una Obra
-lleva **un** Tipo de Obra, así que las dos cosas no podían ser ciertas. Colgándolo del
+lleva **un** Tipo de Texto, así que las dos cosas no podían ser ciertas. Colgándolo del
 Volumen, los tres tomos son narrativa canónica, los *Apéndices* material de referencia, y
 los cuatro siguen siendo *El Señor de los Anillos*.
 
@@ -54,8 +54,10 @@ Conjunto de Evaluación ya estaba codificando a mano en cada una de sus cadenas.
 - En `eval/conjunto-evaluacion.yaml` el campo se llama `obra` pero contiene el nombre de un
   **Volumen**. El fichero está congelado y no se toca; quien escriba el ejecutor del ticket
   06 tiene que saberlo.
-- El término conserva el nombre «Tipo de Obra» aunque cuelgue del Volumen. Renombrarlo
-  tocaría el glosario, el manifiesto y tres tickets a cambio de precisión nominal.
+- El término pasa a llamarse **Tipo de Texto**. Se llamaba «Tipo de Obra», y ese nombre
+  apuntaba al dueño equivocado justo en el punto que este ADR viene a separar: la Obra no
+  lo lleva, lo lleva el Volumen. Un glosario que nombra mal al dueño de un atributo enseña
+  a colgarlo del sitio equivocado.
 
 ## Cuándo reconsiderarlo
 
@@ -66,4 +68,4 @@ previsible.
 
 Si en algún momento los cuatro ficheros se sustituyen por una edición con numeración
 continua, el Volumen deja de hacer falta para desambiguar la página — pero sigue haciendo
-falta para el Tipo de Obra, que es lo que distingue los *Apéndices* de los tres tomos.
+falta para el Tipo de Texto, que es lo que distingue los *Apéndices* de los tres tomos.

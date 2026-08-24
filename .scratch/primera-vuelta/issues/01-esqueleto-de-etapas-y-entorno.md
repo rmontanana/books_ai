@@ -48,7 +48,8 @@ dependientes**, que es la casilla de la invalidación en cascada. Sobre el pipel
 **Las dos primeras etapas** son deliberadamente pequeñas: `inventario` (los PDF del Corpus
 con su cuenta de páginas) y `resumen-corpus` (ese inventario en markdown). Existen para
 que el esqueleto tenga algo real que masticar sin adelantar decisiones que son del ticket
-03: aquí no hay Obras, ni Universos, ni Tipos de Obra, sólo ficheros y páginas.
+03: aquí no hay Obras, ni Volúmenes, ni Universos, ni Tipos de Texto, sólo ficheros y
+páginas.
 
 Un subproducto útil: el inventario da **7.712 páginas en 17 ficheros**, y descontando los
 dos excluidos (50 + 50) salen exactamente las **7.612** que dice `app.md`. La cifra del
@@ -102,10 +103,12 @@ sin tilde, mientras que los otros tres empiezan por «El Señor de los Anillos -
 Agruparlos por prefijo deja los *Apéndices* fuera sin avisar — que es exactamente lo que le
 pasó al primer recuento de este ticket.
 
-Lo que **no** se resuelve aquí es de qué Tipo de Obra son esos *Apéndices*: `app.md` los
-llama «material de referencia» y a la vez cuarto fichero de una Obra de narrativa canónica,
-y una Obra lleva un solo Tipo de Obra. Si acaban siendo Obra aparte, el Corpus tiene 13.
-Queda anotado en el «Pendiente de decidir» de `app.md` y en los comentarios del 03.
+Al contarlas apareció también de qué Tipo de Texto son esos *Apéndices*: `app.md` los
+llamaba «material de referencia» y a la vez cuarto fichero de una Obra de narrativa
+canónica, y una Obra no puede llevar dos. Eso se resolvió aparte, en el
+[ADR-0006](../../../docs/adr/0006-la-cita-nombra-un-volumen-no-una-obra.md), que separó la
+Obra del **Volumen** y colgó el Tipo de Texto del segundo. La cuenta se queda en 12 Obras y
+15 Volúmenes.
 
 ### Ronda de revisión
 

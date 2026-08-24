@@ -16,7 +16,7 @@ paratexto que responde consultas desde fuera de la ficción.
 - [ ] La presentación del editor de *Juego de tronos* y el epílogo del autor de *Danza de dragones* quedan fuera del índice
 - [ ] **La limpieza no altera el mapa de páginas**: se limpia dentro de cada página, nunca entre páginas
 - [ ] Existe una comprobación automática de que el número de páginas por **Volumen** es idéntico antes y después de limpiar
-- [ ] Cada **Volumen** lleva registrado su Tipo de Obra: los tres tomos de *El Señor de los Anillos* son narrativa canónica y sus *Apéndices*, material de referencia, sin dejar de ser la misma Obra
+- [ ] Cada **Volumen** lleva registrado su Tipo de Texto: los tres tomos de *El Señor de los Anillos* son narrativa canónica y sus *Apéndices*, material de referencia, sin dejar de ser la misma Obra
 - [ ] Una consulta cuya respuesta esté en una crónica interna lo refleja en la respuesta en vez de presentarlo como hecho establecido
 - [ ] Toda Cita nombra un Volumen, nunca una Obra
 
@@ -37,15 +37,17 @@ cuatro de ellos. El desglose medido, ya sin los dos ficheros excluidos:
 Las 7.612 páginas coinciden con las que decía `app.md`; lo que estaba mal era sólo la
 cuenta de Obras.
 
-### El Tipo de Obra de los *Apéndices*, resuelto — 2026-08-24
+### El Tipo de Texto de los *Apéndices*, resuelto — 2026-08-24
 
-La casilla «Cada Obra lleva registrado su Tipo de Obra» chocaba con la de *El Señor de los
+La casilla decía entonces «Cada Obra lleva registrado su Tipo de Obra» —el término se llama
+ahora **Tipo de Texto**, por lo que se explica abajo— y chocaba con la de *El Señor de los
 Anillos*: `app.md` llamaba a los *Apéndices* «material de referencia» —un Tipo propio— y a
 la vez el cuarto fichero de una Obra cuyos otros tres son narrativa canónica. Una Obra lleva
-**un** Tipo de Obra, así que las dos cosas no podían ser ciertas.
+**un** Tipo de Texto, así que las dos cosas no podían ser ciertas.
 
 Lo resuelve el
-[ADR-0006](../../../docs/adr/0006-la-cita-nombra-un-volumen-no-una-obra.md): el Tipo de Obra
+[ADR-0006](../../../docs/adr/0006-la-cita-nombra-un-volumen-no-una-obra.md): el Tipo de Texto
+—que hasta entonces se llamaba «Tipo de Obra», un nombre que señalaba al dueño equivocado—
 cuelga del **Volumen**, no de la Obra. Los tres tomos son narrativa canónica, los
 *Apéndices* material de referencia, y los cuatro siguen siendo *El Señor de los Anillos*. La
 cuenta se queda en **12 Obras / 15 Volúmenes**.

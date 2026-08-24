@@ -27,19 +27,20 @@ _Avoid_: libro, título, fichero, documento
 
 **Volumen**:
 La parte de una Obra que llega en un fichero propio y numera sus páginas desde 1. Es
-lo que nombra la Cita y lo que lleva el Tipo de Obra. El Corpus tiene 15 Volúmenes:
+lo que nombra la Cita y lo que lleva el Tipo de Texto. El Corpus tiene 15 Volúmenes:
 once Obras de un solo Volumen y *El Señor de los Anillos*, que tiene cuatro. Sin él,
 «*El Señor de los Anillos*, p. 263» señalaría a tres sitios a la vez.
 _Avoid_: tomo, parte, entrega, fichero
 
-**Tipo de Obra**:
+**Tipo de Texto**:
 La clase de texto que es un Volumen y, con ella, la autoridad que la aplicación le
 concede: narrativa canónica, crónica interna escrita por un narrador del propio
 Universo y por tanto parcial, o material de referencia. Cuelga del Volumen y no de la
 Obra, que es lo que permite que los tres tomos de *El Señor de los Anillos* sean
 narrativa canónica y sus *Apéndices* material de referencia sin dejar de ser la misma
-Obra. Conserva el nombre por no arrastrar el cambio a todo el glosario.
-_Avoid_: categoría, género, fuente
+Obra. Se llamó «Tipo de Obra» hasta el ADR-0006, y ese nombre apuntaba al dueño
+equivocado.
+_Avoid_: tipo de obra, categoría, género, fuente
 
 ### Modos
 

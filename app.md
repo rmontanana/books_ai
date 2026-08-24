@@ -44,7 +44,7 @@ el manifiesto y no borrados del disco:
 | *Dominio de dragones* | Folleto promocional cuyo texto está íntegramente dentro de *Danza de dragones*. Verificado. Indexarlo produce resultados duplicados y sobre-representa esas páginas al entrenar. |
 | *El Dragón de Hielo* | Cuento independiente que no transcurre en ninguno de los dos Universos. Con el filtro obligatorio por Universo no tiene casilla donde caer. |
 
-Cada Volumen lleva registrado su **Tipo de Obra**, porque no todos merecen la misma
+Cada Volumen lleva registrado su **Tipo de Texto**, porque no todos merecen la misma
 autoridad. *Fuego y Sangre* y *El Mundo de Hielo y Fuego* son crónicas escritas desde
 dentro del Universo por narradores explícitamente parciales, con versiones contradictorias
 del mismo suceso; los *Apéndices* de Tolkien son material de referencia. El Modo Consulta
