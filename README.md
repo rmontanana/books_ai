@@ -30,7 +30,7 @@ Nada de lo que hay debajo es ejecutable aún.
 |---|---|
 | Diseño | ✅ cerrado — [`app.md`](./app.md) |
 | Glosario del dominio | ✅ 16 términos — [`CONTEXT.md`](./CONTEXT.md) |
-| Decisiones registradas | ✅ 4 ADRs — [`docs/adr/`](./docs/adr/) |
+| Decisiones registradas | ✅ 6 ADRs — [`docs/adr/`](./docs/adr/) |
 | Conjunto de evaluación | ✅ 58 preguntas validadas — [`eval/`](./eval/) |
 | Implementación | ⬜ 13 tickets — [`.scratch/primera-vuelta/`](./.scratch/primera-vuelta/) |
 
@@ -59,9 +59,10 @@ Cada subcarpeta de `books/` es un **Universo**, y el universo es un filtro oblig
 toda consulta: el sistema nunca responde ni cita fuera del que hayas elegido.
 
 > **Nota sobre el corpus de referencia.** El diseño y el conjunto de evaluación se
-> construyeron sobre **12 obras repartidas en 15 ficheros PDF** (7.612 páginas, ≈3,36 M
-> palabras) de Tolkien y G.R.R. Martin en castellano. Obra y fichero no son lo mismo: *El
-> Señor de los Anillos* es una sola obra en cuatro ficheros. Si aportas otros libros, el
+> construyeron sobre **12 obras repartidas en 15 volúmenes** (un fichero PDF cada uno,
+> 7.612 páginas, ≈3,36 M palabras) de Tolkien y G.R.R. Martin en castellano. Obra y volumen
+> no son lo mismo: *El Señor de los Anillos* es una sola obra en cuatro volúmenes, y es el
+> volumen —no la obra— lo que aparece en cada cita. Si aportas otros libros, el
 > conjunto de evaluación de `eval/` **no te servirá** y tendrás que escribir el tuyo — es lo
 > primero que hay que hacer, no lo último.
 
@@ -230,12 +231,12 @@ BOOKS_AI_EMBEDDINGS_URL=http://127.0.0.1:8081 uv run pytest tests/test_embedding
 
 ```
 app.md                          El diseño completo
-CONTEXT.md                      Glosario del dominio (16 términos)
+CONTEXT.md                      Glosario del dominio (17 términos)
 src/books_ai/pipeline/          Etapas con caché: recibos y huellas
 src/books_ai/embeddings.py      Cliente del Modelo de Embeddings
 src/books_ai/corpus.py          Las dos primeras etapas sobre el Corpus
 scripts/embeddings-server.sh    Levanta BGE-M3 en llama-server
-docs/adr/                       Las 4 decisiones caras de revertir
+docs/adr/                       Las 6 decisiones caras de revertir
 eval/conjunto-evaluacion.yaml   58 preguntas validadas
 eval/trampas-detectadas.md      Trampas del corpus
 .scratch/primera-vuelta/        13 tickets, en orden de dependencia

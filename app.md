@@ -27,8 +27,8 @@ intenciones: está construida dentro de la arquitectura, y el ADR-0002 explica c
 
 ## El Corpus
 
-15 ficheros PDF que son **12 Obras** —8 de Martin y 4 de Tolkien—, con 7.612 páginas
-repartidas en dos Universos que no comparten absolutamente nada. Martin es el **74,8%** de
+15 ficheros PDF que son **15 Volúmenes** de **12 Obras** —8 de Martin y 4 de Tolkien—,
+con 7.612 páginas repartidas en dos Universos que no comparten absolutamente nada. Martin es el **74,8%** de
 las páginas: 5.695 frente a 1.917.
 
 Ficheros, Obras y páginas están contados contra el disco por la etapa `inventario` del
@@ -44,14 +44,14 @@ el manifiesto y no borrados del disco:
 | *Dominio de dragones* | Folleto promocional cuyo texto está íntegramente dentro de *Danza de dragones*. Verificado. Indexarlo produce resultados duplicados y sobre-representa esas páginas al entrenar. |
 | *El Dragón de Hielo* | Cuento independiente que no transcurre en ninguno de los dos Universos. Con el filtro obligatorio por Universo no tiene casilla donde caer. |
 
-Cada Obra restante lleva registrado su **Tipo de Obra**, porque no todas merecen la misma
+Cada Volumen lleva registrado su **Tipo de Obra**, porque no todos merecen la misma
 autoridad. *Fuego y Sangre* y *El Mundo de Hielo y Fuego* son crónicas escritas desde
 dentro del Universo por narradores explícitamente parciales, con versiones contradictorias
 del mismo suceso; los *Apéndices* de Tolkien son material de referencia. El Modo Consulta
 refleja esa diferencia en la respuesta en lugar de presentarlo todo como hecho.
 
 Un detalle que condiciona la extracción: *El Señor de los Anillos* es **una Obra repartida
-en cuatro ficheros** —los tres tomos y los *Apéndices*—. De ahí que haya 15 ficheros y 12
+en cuatro Volúmenes** —los tres tomos y los *Apéndices*—. De ahí que haya 15 Volúmenes y 12
 Obras.
 
 Y un aviso para quien escriba el manifiesto: el cuarto fichero se llama «El señor de los
@@ -77,8 +77,11 @@ Responde hechos, con procedencia, y admite no saber.
   al vectorizar por una cabecera con su Obra y su Universo, de modo que la procedencia
   viaje dentro del propio embedding.
 - El **Pasaje** es la unidad de cita, y es cosa distinta: el texto literal que sostiene la
-  afirmación. La **Cita** lo acompaña con Obra y página, anclada a donde empieza el Pasaje
-  y no a donde empieza el Fragmento — que casi siempre cruza un salto de página.
+  afirmación. La **Cita** lo acompaña con **Volumen** y página, anclada a donde empieza el
+  Pasaje y no a donde empieza el Fragmento — que casi siempre cruza un salto de página,
+  aunque nunca el límite de un Volumen. Nombra el Volumen y no la Obra por el motivo que
+  recoge el [ADR-0006](./docs/adr/0006-la-cita-nombra-un-volumen-no-una-obra.md): cada
+  Volumen numera sus páginas desde 1.
 - Corre **siempre sobre el Modelo Base sin modificar**.
 
 ### Modo Personaje
@@ -198,21 +201,20 @@ momento.
 - [ADR-0002](./docs/adr/0002-adaptador-conmutable-sobre-modelo-base-intacto.md) — El Adaptador se conmuta sobre un Modelo Base intacto
 - [ADR-0003](./docs/adr/0003-entrenamiento-y-servicio-en-stacks-separados.md) — Entrenamiento y servicio viven en stacks separados
 - [ADR-0004](./docs/adr/0004-indice-en-sqlite-y-no-en-un-servidor-de-vectores.md) — El índice vive en SQLite, no en un servidor de vectores
+- [ADR-0005](./docs/adr/0005-solo-modelos-de-licencia-permisiva-y-sin-restriccion-de-acceso.md) — Sólo modelos de licencia permisiva y sin restricción de acceso
+- [ADR-0006](./docs/adr/0006-la-cita-nombra-un-volumen-no-una-obra.md) — La Cita nombra un Volumen, no una Obra
 
 ## Pendiente de decidir
 
-- **Si los *Apéndices* siguen en el Corpus**: el 81% de sus páginas muestreadas tienen su
-  texto literal dentro de *El retorno del rey*, que ya los incluye. Es el mismo caso que
-  *Dominio de dragones* y está sin resolver. Si se excluyen, el Corpus baja a 14 ficheros y
-  7.423 páginas, pero **sigue teniendo 12 Obras**: los *Apéndices* no son una Obra, son el
-  cuarto fichero de *El Señor de los Anillos*.
-- **Qué Tipo de Obra llevan los *Apéndices***, que es la otra cara de lo anterior y no está
-  resuelta. Este documento dice a la vez que son «material de referencia» —un Tipo de Obra
-  propio— y que son el cuarto fichero de una Obra cuyos otros tres son narrativa canónica.
-  Una Obra lleva **un** Tipo de Obra, así que las dos cosas no pueden ser ciertas: o los
-  *Apéndices* se separan en su propia Obra, y entonces el Corpus tiene **13**, o comparten
-  el Tipo de *El Señor de los Anillos* y se quedan en 12. La cuenta de Obras depende de
-  esta decisión, no sólo de si se indexan.
+- **Si los *Apéndices* siguen en el Corpus**. Tira una fuerza en cada sentido y no se puede
+  desempatar todavía. A favor de conservarlos: el Conjunto de Evaluación los cita en **X02**
+  («Apéndices, p. 61») y está congelado, así que excluirlos deja esa pregunta sin la Cita
+  que espera. En contra: el 81% de sus páginas muestreadas tienen su texto literal dentro de
+  *El retorno del rey*, que ya los incluye, y meter los dos en el índice es el duplicado por
+  el que se excluyó *Dominio de dragones*. Lo que falta para decidir es saber en qué página
+  de *El retorno del rey* cae el pasaje de X02, y eso lo dará la extracción del ticket 02.
+  Si acaban fuera, el Corpus baja a 14 Volúmenes y 7.423 páginas, pero **sigue teniendo 12
+  Obras**: los *Apéndices* no son una Obra, son un Volumen de *El Señor de los Anillos*.
 
 El planteamiento original del proyecto, previo a este diseño, se conserva en
 [`docs/app-planteamiento-inicial.md`](./docs/app-planteamiento-inicial.md).

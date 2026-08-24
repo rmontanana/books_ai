@@ -21,13 +21,24 @@ _Avoid_: biblioteca, base de conocimiento, dataset
 **Obra**:
 La unidad canónica del Corpus: un texto publicado, con independencia de en cuántos
 ficheros PDF llegue. *El Señor de los Anillos* es una Obra repartida en cuatro
-ficheros; no son cuatro Obras.
+Volúmenes; no son cuatro Obras. El Corpus tiene 12 Obras. No es lo que la Cita
+nombra: eso es el Volumen.
 _Avoid_: libro, título, fichero, documento
 
+**Volumen**:
+La parte de una Obra que llega en un fichero propio y numera sus páginas desde 1. Es
+lo que nombra la Cita y lo que lleva el Tipo de Obra. El Corpus tiene 15 Volúmenes:
+once Obras de un solo Volumen y *El Señor de los Anillos*, que tiene cuatro. Sin él,
+«*El Señor de los Anillos*, p. 263» señalaría a tres sitios a la vez.
+_Avoid_: tomo, parte, entrega, fichero
+
 **Tipo de Obra**:
-La clase de texto que es una Obra y, con ella, la autoridad que la aplicación le
+La clase de texto que es un Volumen y, con ella, la autoridad que la aplicación le
 concede: narrativa canónica, crónica interna escrita por un narrador del propio
-Universo y por tanto parcial, o material de referencia.
+Universo y por tanto parcial, o material de referencia. Cuelga del Volumen y no de la
+Obra, que es lo que permite que los tres tomos de *El Señor de los Anillos* sean
+narrativa canónica y sus *Apéndices* material de referencia sin dejar de ser la misma
+Obra. Conserva el nombre por no arrastrar el cambio a todo el glosario.
 _Avoid_: categoría, género, fuente
 
 ### Modos
@@ -52,13 +63,16 @@ _Avoid_: extracto, cita, snippet, contexto
 
 **Fragmento**:
 La unidad en que se trocea el Corpus para poder recuperarlo. Puede cruzar saltos de
-página y no coincide con el Pasaje: el Fragmento es lo que se busca, el Pasaje es lo
-que se cita.
+página, pero nunca el límite de un Volumen —si lo cruzara, su Cita no podría nombrar
+una sola página—, y no coincide con el Pasaje: el Fragmento es lo que se busca, el
+Pasaje es lo que se cita.
 _Avoid_: chunk, trozo, bloque, segmento
 
 **Cita**:
-La procedencia de un Pasaje: la Obra y la página en las que aparece. Acompaña
-siempre al Pasaje, nunca lo sustituye.
+La procedencia de un Pasaje: el Volumen y la página en las que aparece. Acompaña
+siempre al Pasaje, nunca lo sustituye. Nombra el Volumen y no la Obra porque cada
+Volumen numera sus páginas desde 1, y una Cita que apunta a tres sitios no verifica
+nada.
 _Avoid_: referencia, fuente, atribución
 
 ### Modelos
