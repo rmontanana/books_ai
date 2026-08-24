@@ -126,9 +126,26 @@ Dos stacks separados, por el motivo que recoge el ADR-0003.
   rompería la razón por la que ese toolbox funciona.
 - **Frontend**: web servida por el backend, accesible desde otros dispositivos de la red
   local, sin autenticación. Universo y Modo son dos selectores explícitos.
-- **Primera vuelta** con un Modelo Base de clase 8B. El objetivo de la primera vuelta no
-  es un buen asistente, es cerrar el circuito completo y ver números. Un modelo pequeño lo
-  dice en una tarde; uno grande tardaría tres días en no decir nada más.
+- **Primera vuelta** con `Qwen/Qwen3-8B` como Modelo Base. El objetivo de la primera
+  vuelta no es un buen asistente, es cerrar el circuito completo y ver números. Un modelo
+  pequeño lo dice en una tarde; uno grande tardaría tres días en no decir nada más.
+
+### Modelos elegidos
+
+| Rol | Modelo | Por qué |
+| --- | --- | --- |
+| Modelo Base, primera vuelta | `Qwen/Qwen3-8B` | Apache-2.0, GGUF publicado por los propios Qwen, 4,8% de alucinación en el leaderboard de Vectara, y el ecosistema de LoRA mejor rodado en su talla. Es el camino con menos incógnitas para cerrar el circuito. |
+| Modelo Base, segunda vuelta | `google/gemma-4-31B-it` | Apache-2.0, 140+ idiomas con el español de primera, 256K de contexto. Aquí sí se busca calidad, y es donde debe notarse en el marcador. |
+| Modelo generador (ticket 10) | `google/gemma-4-31B-it` | Denso, mejor español que la base, y **de otra familia** que el modelo a afinar, que es lo que evita la auto-imitación. |
+| Modelo de Embeddings | BGE-M3 *(a confirmar en el ticket 01)* | Multilingüe y servible por `llama-server`. Si no carga en GGUF, se elige alternativa ahí mismo. |
+
+Ninguna de estas elecciones es cara de revertir: para eso están el pipeline repetible y el
+Conjunto de Evaluación. Lo que sí es una restricción con la que hay que contar está en el
+[ADR-0005](./docs/adr/0005-solo-modelos-de-licencia-permisiva-y-sin-restriccion-de-acceso.md).
+
+**Ojo con la segunda vuelta:** si pasa a usar `gemma-4-31B-it` como Modelo Base y los pares
+sintéticos los generó ese mismo modelo, la auto-imitación vuelve por la puerta de atrás.
+Habría que regenerar el lote con otra familia, o aceptarlo a sabiendas.
 
 ## Evaluación
 
@@ -172,11 +189,6 @@ momento.
 
 ## Pendiente de decidir
 
-Los tres son baratos de cambiar y se deciden mejor con el pipeline delante:
-
-- El Modelo Base concreto — está elegida la clase (8B), no el nombre
-- El modelo grande que generará los pares sintéticos
-- El número exacto de preguntas del Conjunto de Evaluación, dentro del rango 50–100
 - **Si los *Apéndices* siguen en el Corpus**: el 81% de sus páginas muestreadas tienen su
   texto literal dentro de *El retorno del rey*, que ya los incluye. Es el mismo caso que
   *Dominio de dragones* y está sin resolver.

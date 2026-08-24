@@ -15,3 +15,5 @@ el pequeño que luego se va a afinar.
 - [ ] Hay pares de los dos Universos y no se mezclan entre sí
 - [ ] Queda anotado qué modelo generó el lote y con qué configuración, para poder rehacerlo
 - [ ] Una muestra se revisa a mano antes de dar el lote por bueno
+- [ ] El generador previsto es `google/gemma-4-31B-it`, de familia distinta al Modelo Base `Qwen/Qwen3-8B`
+- [ ] **Si la segunda vuelta pasa a usar `gemma-4-31B-it` como Modelo Base**, este lote deja de ser válido: lo habría generado su propia familia y vuelve la auto-imitación. Regenerar con otra familia o dejar constancia de que se acepta
