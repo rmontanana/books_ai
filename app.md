@@ -137,7 +137,7 @@ Dos stacks separados, por el motivo que recoge el ADR-0003.
 | Modelo Base, primera vuelta | `Qwen/Qwen3-8B` | Apache-2.0, GGUF publicado por los propios Qwen, 4,8% de alucinación en el leaderboard de Vectara, y el ecosistema de LoRA mejor rodado en su talla. Es el camino con menos incógnitas para cerrar el circuito. |
 | Modelo Base, segunda vuelta | `google/gemma-4-31B-it` | Apache-2.0, 140+ idiomas con el español de primera, 256K de contexto. Aquí sí se busca calidad, y es donde debe notarse en el marcador. |
 | Modelo generador (ticket 10) | `google/gemma-4-31B-it` | Denso, mejor español que la base, y **de otra familia** que el modelo a afinar, que es lo que evita la auto-imitación. |
-| Modelo de Embeddings | BGE-M3 *(a confirmar en el ticket 01)* | Multilingüe y servible por `llama-server`. Si no carga en GGUF, se elige alternativa ahí mismo. |
+| Modelo de Embeddings | BGE-M3 — `gpustack/bge-m3-GGUF`, FP16 | Multilingüe y servible por `llama-server`. **Confirmado en el ticket 01**: carga en la build actual (`b10590`), 1024 dimensiones, contexto de 8192, agrupación por CLS. Se sirve en FP16 (1,16 GB) porque cuantizar un modelo de embeddings se paga en calidad de recuperación y a este tamaño no compensa. |
 
 Ninguna de estas elecciones es cara de revertir: para eso están el pipeline repetible y el
 Conjunto de Evaluación. Lo que sí es una restricción con la que hay que contar está en el

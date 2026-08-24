@@ -92,6 +92,7 @@ AMD: si tienes CUDA, sustituye el stack de servicio y funciona igual.
 |---|---|
 | **`poppler-utils`** (`pdftotext`, `pdfinfo`) | Extraer texto y páginas de los PDFs |
 | **Python 3.12** con [`uv`](https://github.com/astral-sh/uv) | El pipeline. **Python 3.13+ no vale**: sin ruedas para buena parte del stack de ML |
+| **Un locale UTF-8** (o `PYTHONUTF8=1`) | Media docena de Obras llevan acentos en el nombre del fichero, y de ahí sale el nombre de la Obra en cada Cita. Con otra codificación saldrían corruptas, así que el CLI se niega a arrancar |
 | **[`llama.cpp`](https://github.com/ggml-org/llama.cpp)** (`llama-server`) | Servir el modelo generativo **y** calcular los embeddings |
 | **Podman + toolbox** *(recomendado en AMD)* | Aislar ROCm sin tocar el sistema anfitrión |
 | **ROCm 7.x** | Sólo si vas a entrenar. El Modo Consulta no lo necesita |
@@ -171,11 +172,67 @@ en los libros de Martin— documentadas en
 
 ---
 
+## 🚀 Cómo se arranca
+
+```bash
+uv sync                      # crea el entorno con Python 3.12
+uv run books-ai pipeline list
+```
+
+### El pipeline
+
+Cada etapa declara qué artefacto consume y cuál produce, y sólo corre si algo cambió.
+
+```bash
+uv run books-ai pipeline run                 # todo lo que no esté al día
+uv run books-ai pipeline run inventario      # una etapa y las que necesita por delante
+uv run books-ai pipeline run inventario --only --force
+uv run books-ai pipeline invalidate inventario   # arrastra a las dependientes
+```
+
+Lo que decide si una etapa está al día es su **recibo** en `.cache/receipts/`: la huella
+sha256 de cada entrada, la de cada salida y la versión de la etapa. Cambia un PDF y se
+recalcula lo que depende de él; no cambia nada y la segunda pasada tarda una décima de
+segundo. Para forzar el recálculo de un cambio que el contenido no delata —otro troceado,
+otra limpieza— se sube la `version` de la etapa.
+
+### El Modelo de Embeddings
+
+Se sirve con `llama-server`, aparte del pipeline:
+
+```bash
+hf download gpustack/bge-m3-GGUF bge-m3-FP16.gguf --local-dir ~/Code/models/bge-m3-GGUF
+scripts/embeddings-server.sh &
+uv run books-ai embeddings probe
+```
+
+**BGE-M3 en GGUF está confirmado** sobre `llama.cpp` `b10590`: 1.024 dimensiones, contexto
+de 8.192 y vectores normalizados. Se sirve en FP16 —cuantizar un modelo de embeddings se
+paga en calidad de recuperación— y con `--pooling cls`, que es como fue entrenado; con
+`--pooling none` el servidor devuelve un vector por token y el cliente lo rechaza en vez de
+aplastarlo en silencio.
+
+### Las pruebas
+
+```bash
+uv run pytest                # 66, sin necesidad de GPU ni de PDFs
+uv run mypy && uv run ruff check .
+
+# La comprobación contra un llama-server de verdad, que si no se salta sola:
+BOOKS_AI_EMBEDDINGS_URL=http://127.0.0.1:8081 uv run pytest tests/test_embeddings_live.py
+```
+
+---
+
 ## 📂 Estructura
 
 ```
 app.md                          El diseño completo
 CONTEXT.md                      Glosario del dominio (16 términos)
+src/books_ai/pipeline/          Etapas con caché: recibos y huellas
+src/books_ai/embeddings.py      Cliente del Modelo de Embeddings
+src/books_ai/corpus.py          Las dos primeras etapas sobre el Corpus
+scripts/embeddings-server.sh    Levanta BGE-M3 en llama-server
 docs/adr/                       Las 4 decisiones caras de revertir
 eval/conjunto-evaluacion.yaml   58 preguntas validadas
 eval/trampas-detectadas.md      Trampas del corpus

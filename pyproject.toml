@@ -1,0 +1,44 @@
+[project]
+name = "books-ai"
+version = "0.1.0"
+description = "Consulta local sobre un corpus de libros de dos universos de ficcion"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "click>=8.1",
+    "httpx>=0.27",
+    "pypdf>=5.1",
+]
+
+[project.scripts]
+books-ai = "books_ai.cli:main"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13",
+    "pytest>=8.3",
+    "ruff>=0.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/books_ai"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src", "tests"]
+strict = true
