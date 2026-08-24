@@ -27,8 +27,14 @@ intenciones: está construida dentro de la arquitectura, y el ADR-0002 explica c
 
 ## El Corpus
 
-15 ficheros PDF, ~3,36 M palabras y 7.612 páginas, repartidas en dos Universos que no
-comparten absolutamente nada. Martin representa cerca del 73% del texto.
+15 ficheros PDF que son **12 Obras** —8 de Martin y 4 de Tolkien—, con 7.612 páginas
+repartidas en dos Universos que no comparten absolutamente nada. Martin es el **74,8%** de
+las páginas: 5.695 frente a 1.917.
+
+Ficheros, Obras y páginas están contados contra el disco por la etapa `inventario` del
+ticket 01. El recuento de palabras —~3,36 M— y el reparto por texto —cerca del 73% de
+Martin— vienen del planteamiento inicial y **no se han vuelto a medir**; la extracción del
+ticket 02 los dará exactos, y es de esperar que se muevan poco.
 
 Los 17 ficheros originales incluían dos que quedan **excluidos**, anotados como tales en
 el manifiesto y no borrados del disco:
@@ -45,7 +51,13 @@ del mismo suceso; los *Apéndices* de Tolkien son material de referencia. El Mod
 refleja esa diferencia en la respuesta en lugar de presentarlo todo como hecho.
 
 Un detalle que condiciona la extracción: *El Señor de los Anillos* es **una Obra repartida
-en cuatro ficheros**. Hay 15 ficheros, no 15 Obras.
+en cuatro ficheros** —los tres tomos y los *Apéndices*—. De ahí que haya 15 ficheros y 12
+Obras.
+
+Y un aviso para quien escriba el manifiesto: el cuarto fichero se llama «El señor de los
+anillos 4 - Apendices», en minúsculas y sin tilde, mientras que los otros tres empiezan por
+«El Señor de los Anillos - 0N». Agruparlos por prefijo deja los *Apéndices* fuera sin decir
+nada. La correspondencia entre fichero y Obra se declara a mano; no se adivina del nombre.
 
 ## Arquitectura
 
@@ -191,7 +203,16 @@ momento.
 
 - **Si los *Apéndices* siguen en el Corpus**: el 81% de sus páginas muestreadas tienen su
   texto literal dentro de *El retorno del rey*, que ya los incluye. Es el mismo caso que
-  *Dominio de dragones* y está sin resolver.
+  *Dominio de dragones* y está sin resolver. Si se excluyen, el Corpus baja a 14 ficheros y
+  7.423 páginas, pero **sigue teniendo 12 Obras**: los *Apéndices* no son una Obra, son el
+  cuarto fichero de *El Señor de los Anillos*.
+- **Qué Tipo de Obra llevan los *Apéndices***, que es la otra cara de lo anterior y no está
+  resuelta. Este documento dice a la vez que son «material de referencia» —un Tipo de Obra
+  propio— y que son el cuarto fichero de una Obra cuyos otros tres son narrativa canónica.
+  Una Obra lleva **un** Tipo de Obra, así que las dos cosas no pueden ser ciertas: o los
+  *Apéndices* se separan en su propia Obra, y entonces el Corpus tiene **13**, o comparten
+  el Tipo de *El Señor de los Anillos* y se quedan en 12. La cuenta de Obras depende de
+  esta decisión, no sólo de si se indexan.
 
 El planteamiento original del proyecto, previo a este diseño, se conserva en
 [`docs/app-planteamiento-inicial.md`](./docs/app-planteamiento-inicial.md).

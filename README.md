@@ -59,9 +59,11 @@ Cada subcarpeta de `books/` es un **Universo**, y el universo es un filtro oblig
 toda consulta: el sistema nunca responde ni cita fuera del que hayas elegido.
 
 > **Nota sobre el corpus de referencia.** El diseño y el conjunto de evaluación se
-> construyeron sobre 15 obras (≈3,36 M palabras, 7.612 páginas) de Tolkien y G.R.R. Martin
-> en castellano. Si aportas otros libros, el conjunto de evaluación de `eval/` **no te
-> servirá** y tendrás que escribir el tuyo — es lo primero que hay que hacer, no lo último.
+> construyeron sobre **12 obras repartidas en 15 ficheros PDF** (7.612 páginas, ≈3,36 M
+> palabras) de Tolkien y G.R.R. Martin en castellano. Obra y fichero no son lo mismo: *El
+> Señor de los Anillos* es una sola obra en cuatro ficheros. Si aportas otros libros, el
+> conjunto de evaluación de `eval/` **no te servirá** y tendrás que escribir el tuyo — es lo
+> primero que hay que hacer, no lo último.
 
 ### Comprueba que tus PDFs valen
 
@@ -92,7 +94,7 @@ AMD: si tienes CUDA, sustituye el stack de servicio y funciona igual.
 |---|---|
 | **`poppler-utils`** (`pdftotext`, `pdfinfo`) | Extraer texto y páginas de los PDFs |
 | **Python 3.12** con [`uv`](https://github.com/astral-sh/uv) | El pipeline. **Python 3.13+ no vale**: sin ruedas para buena parte del stack de ML |
-| **Un locale UTF-8** (o `PYTHONUTF8=1`) | Media docena de Obras llevan acentos en el nombre del fichero, y de ahí sale el nombre de la Obra en cada Cita. Con otra codificación saldrían corruptas, así que el CLI se niega a arrancar |
+| **Un locale UTF-8** (o `PYTHONUTF8=1`) | 11 de los 15 ficheros del corpus de referencia llevan acentos o eñes en el nombre, y de ahí sale el nombre de la Obra en cada Cita. Con otra codificación saldrían corruptas, así que el CLI se niega a arrancar |
 | **[`llama.cpp`](https://github.com/ggml-org/llama.cpp)** (`llama-server`) | Servir el modelo generativo **y** calcular los embeddings |
 | **Podman + toolbox** *(recomendado en AMD)* | Aislar ROCm sin tocar el sistema anfitrión |
 | **ROCm 7.x** | Sólo si vas a entrenar. El Modo Consulta no lo necesita |

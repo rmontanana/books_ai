@@ -87,13 +87,25 @@ declarado en `pyproject.toml`.
 sólo tenga que declarar qué consume y qué produce; `books_ai/corpus.py` sirve de ejemplo
 de las dos formas de etapa (leer del disco, transformar un artefacto).
 
-### Una discrepancia detectada, sin resolver aquí
+### Una discrepancia detectada, ya corregida
 
-El ticket **03** dice «las **15 Obras** del Corpus quedan indexadas», pero `app.md` dice
-«Hay **15 ficheros, no 15 Obras**» y que *El Señor de los Anillos* es una Obra repartida en
-cuatro. Con esa regla salen **12 Obras** en 15 ficheros, no 15. No se toca aquí porque la
-cuenta depende de si los *Apéndices* siguen en el Corpus, que es la decisión que `app.md`
-deja explícitamente pendiente. Quien coja el 03 se lo encuentra de frente.
+El ticket **03** decía «las **15 Obras** del Corpus quedan indexadas», pero `app.md` dice
+«Hay 15 ficheros, no 15 Obras» y que *El Señor de los Anillos* es una Obra repartida en
+cuatro. Con esa regla salen **12 Obras** en 15 ficheros. La cuenta medida por la etapa
+`inventario` —8 Obras de Martin en 8 ficheros, 4 de Tolkien en 7— confirma las 12, y las
+7.612 páginas de `app.md` salen exactas, así que lo único equivocado era el número de
+Obras. Corregido en `app.md`, en el ticket 03 y en el README.
+
+Al contarlas apareció una trampa de nombres que hereda el ticket 03: el cuarto fichero de
+*El Señor de los Anillos* se llama «El señor de los anillos 4 - Apendices», en minúsculas y
+sin tilde, mientras que los otros tres empiezan por «El Señor de los Anillos - 0N».
+Agruparlos por prefijo deja los *Apéndices* fuera sin avisar — que es exactamente lo que le
+pasó al primer recuento de este ticket.
+
+Lo que **no** se resuelve aquí es de qué Tipo de Obra son esos *Apéndices*: `app.md` los
+llama «material de referencia» y a la vez cuarto fichero de una Obra de narrativa canónica,
+y una Obra lleva un solo Tipo de Obra. Si acaban siendo Obra aparte, el Corpus tiene 13.
+Queda anotado en el «Pendiente de decidir» de `app.md` y en los comentarios del 03.
 
 ### Ronda de revisión
 
@@ -122,7 +134,7 @@ regresión antes de cerrar:
 
 Y una que salió tirando del hilo de la anterior, más de fondo: con un locale no UTF-8,
 Python decodifica mal los **nombres de fichero**, y «El Señor de los Anillos» se convierte
-en «El SeÃ±or...». No es cosmético: de ese nombre saldrá el nombre de la Obra en cada Cita,
+en «El SeÃ±or...». Afecta a 11 de los 15 ficheros del Corpus, no a un caso raro. No es cosmético: de ese nombre saldrá el nombre de la Obra en cada Cita,
 y la corrupción entra además en la huella del artefacto, así que el pipeline produciría
 resultados distintos según el shell desde el que se lance. Un entorno reproducible no puede
 depender de eso, de modo que el CLI ahora se niega a arrancar y explica la salida

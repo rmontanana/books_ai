@@ -19,8 +19,8 @@ URL_EMBEDDINGS_POR_DEFECTO = "http://127.0.0.1:8081"
 def _exigir_utf8() -> None:
     """Sin UTF-8 en el sistema de ficheros no hay entorno reproducible.
 
-    Media docena de Obras llevan acentos en el nombre del fichero, y de ahi
-    saldra el nombre de la Obra en cada Cita. Con otra codificacion, Python
+    Once de los quince ficheros del Corpus llevan acentos o enes en el nombre,
+    y de ahi saldra el nombre de la Obra en cada Cita. Con otra codificacion, Python
     decodifica «El Senor de los Anillos» como «El SeÃ±or...», la huella del
     artefacto cambia con el locale del shell, y nada de eso da la cara hasta
     que alguien lee una Cita. Mejor negarse que producir Citas mojibake.
